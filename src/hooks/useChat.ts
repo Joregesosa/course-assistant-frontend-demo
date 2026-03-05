@@ -27,6 +27,7 @@ export function useChat({ contact_guid }: UseChatOptions) {
       })
       conversationIdRef.current = await copilotService.startConversation(contact_guid)
       setIsConnecting(false)
+      setIsLoading(true)
     }
 
     init()
