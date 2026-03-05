@@ -1,0 +1,293 @@
+<!-- Login with Name - Copilot Studio Agent -->
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BYU-Pathway Chat Assistant - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#002e5c",
+                        "accent-gold": "#FFB81C",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
+<!-- Top Navigation Bar -->
+<header class="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 lg:px-12 py-4 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary flex items-center justify-center rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<div class="flex flex-col">
+<h2 class="text-primary dark:text-slate-100 text-lg font-bold leading-none tracking-tight">BYU-Pathway</h2>
+<span class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Worldwide</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:block text-right">
+<p class="text-xs text-slate-500 font-medium">Support Center</p>
+<p class="text-sm font-bold text-primary dark:text-slate-300">Help Desk</p>
+</div>
+<div class="size-10 rounded-full border-2 border-slate-100 dark:border-slate-700 overflow-hidden bg-slate-200" data-alt="User profile placeholder silhouette">
+<span class="material-symbols-outlined text-slate-400 flex items-center justify-center h-full">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex items-center justify-center p-6 relative overflow-hidden">
+<!-- Background Accent Shapes -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-accent-gold/5 rounded-full blur-3xl"></div>
+<div class="w-full max-w-md z-10">
+<!-- Login Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 overflow-hidden">
+<!-- Decorative Top Bar -->
+<div class="h-2 w-full bg-gradient-to-r from-primary via-primary to-accent-gold"></div>
+<div class="p-8 lg:p-10">
+<div class="flex justify-center mb-8">
+<div class="size-16 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center text-primary dark:text-slate-200">
+<span class="material-symbols-outlined text-4xl">smart_toy</span>
+</div>
+</div>
+<div class="text-center mb-8">
+<h1 class="text-slate-900 dark:text-slate-50 text-2xl lg:text-3xl font-bold mb-3 tracking-tight">Welcome!</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                            Please enter your <span class="font-semibold text-primary dark:text-slate-300">Contact GUID</span> to start your session with our assistant.
+                        </p>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 px-1" for="full-name">
+                                Full Name
+                            </label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">person</span>
+</div>
+<input class="w-full pl-11 pr-4 py-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 font-medium" id="full-name" name="full-name" placeholder="Enter your full name" type="text"/>
+</div>
+</div><div class="space-y-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 px-1" for="guid">
+                                Contact GUID
+                            </label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">fingerprint</span>
+</div>
+<input class="w-full pl-11 pr-4 py-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 font-medium" id="guid" name="guid" placeholder="Enter your unique ID" type="text"/>
+</div>
+<p class="text-[11px] text-slate-500 px-1">Your GUID can be found in your student portal under profile settings.</p>
+</div>
+<button class="w-full bg-accent-gold hover:bg-[#e6a619] text-primary font-bold py-4 px-6 rounded-lg transition-all shadow-lg shadow-accent-gold/20 flex items-center justify-center gap-2 group active:scale-[0.98]" type="submit">
+<span>Start Chat</span>
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800 text-center">
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                            Need help? <a class="text-primary dark:text-slate-300 font-bold hover:underline" href="#">Contact Support</a>
+</p>
+</div>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="mt-6 flex justify-center gap-6 text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span class="size-1 rounded-full bg-slate-300 mt-1"></span>
+<a class="hover:text-primary transition-colors" href="#">Terms of Use</a>
+</div>
+</div>
+</main>
+<!-- Page Footer -->
+<footer class="w-full py-6 px-12 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 bg-white dark:bg-slate-900">
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">
+            © 2024 BYU-Pathway Worldwide. All rights reserved.
+        </p>
+<div class="flex items-center gap-2 text-primary/60 dark:text-slate-400 font-bold text-xs">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>POWERED BY COPILOT STUDIO</span>
+</div>
+</footer>
+</body></html>
+
+<!-- Chat with User Name Header -->
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BYU-Pathway Help Desk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#002e5c",
+                        "accent": "#ffb81c",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scroll-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-background-dark px-6 py-4 md:px-10 lg:px-40 shrink-0">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary text-accent">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-primary dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">BYU-Pathway</h1>
+<span class="text-xs font-medium text-slate-500 uppercase tracking-widest">Help Desk</span>
+</div>
+</div>
+<div class="flex items-center gap-2 md:gap-6">
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10">
+<div class="size-2 rounded-full bg-green-500 animate-pulse"></div>
+<span class="text-xs font-semibold text-primary/70">Support Online</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">help_outline</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-800">
+<div class="flex flex-col items-end hidden sm:flex">
+<span class="text-sm font-bold text-primary dark:text-slate-100">John Doe</span>
+<span class="text-[10px] font-medium text-slate-500 uppercase tracking-tighter">Student</span>
+</div>
+<div class="bg-accent text-primary rounded-full size-10 flex items-center justify-center shrink-0 border-2 border-white dark:border-slate-800 shadow-sm font-bold text-sm">
+                JD
+            </div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto scroll-hide px-4 py-8 md:px-10 lg:px-40 space-y-6">
+<div class="flex items-end gap-3 max-w-2xl">
+<div class="bg-primary/10 text-primary rounded-full size-10 flex items-center justify-center shrink-0 border border-primary/5">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1.5 items-start">
+<span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider ml-1">Assistant</span>
+<div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-sm md:text-base px-5 py-3.5 rounded-2xl rounded-bl-none shadow-sm">
+                        Hi! I'm your BYU-Pathway assistant. How can I help you today?
+                    </div>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end ml-auto max-w-2xl">
+<div class="flex flex-col gap-1.5 items-end">
+<span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mr-1">You</span>
+<div class="bg-primary text-white text-sm md:text-base px-5 py-3.5 rounded-2xl rounded-br-none shadow-md">
+                        I need help finding my student portal GUID.
+                    </div>
+</div>
+<div class="bg-accent text-primary rounded-full size-10 flex items-center justify-center shrink-0 border border-primary/10 font-bold">
+                    JD
+                </div>
+</div>
+<div class="flex items-end gap-3 max-w-2xl">
+<div class="bg-primary/10 text-primary rounded-full size-10 flex items-center justify-center shrink-0 border border-primary/5">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1.5 items-start">
+<span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider ml-1">Assistant</span>
+<div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-sm md:text-base px-5 py-3.5 rounded-2xl rounded-bl-none shadow-sm">
+                        Sure! You can find your Contact GUID in your student portal under the profile settings section. Would you like me to guide you there?
+                    </div>
+<div class="flex gap-2 mt-2 ml-1">
+<button class="px-4 py-2 rounded-full border border-primary text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                            Yes, please
+                        </button>
+<button class="px-4 py-2 rounded-full border border-slate-300 text-slate-500 text-xs font-bold hover:bg-slate-50 transition-all">
+                            No, thanks
+                        </button>
+</div>
+</div>
+</div>
+<div class="flex justify-center">
+<span class="text-[10px] font-semibold text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full uppercase tracking-widest">Today</span>
+</div>
+</main>
+<footer class="bg-white dark:bg-background-dark border-t border-primary/10 px-4 py-6 md:px-10 lg:px-40">
+<div class="max-w-4xl mx-auto">
+<div class="relative flex items-center gap-3">
+<div class="flex-1 relative">
+<input class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-4 pr-24 text-sm md:text-base outline-none transition-all" placeholder="Type your message..." type="text"/>
+<div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mood</span>
+</button>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white size-12 md:w-auto md:px-6 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg active:scale-95 shrink-0">
+<span class="hidden md:inline font-bold">Send</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<p class="text-[10px] text-center text-slate-400 mt-4 font-medium uppercase tracking-tighter">
+                    BYU-Pathway Support Agent is available 24/7 for your academic needs.
+                </p>
+</div>
+</footer>
+</div>
+</body></html>
