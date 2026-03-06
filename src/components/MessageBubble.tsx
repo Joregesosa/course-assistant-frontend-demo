@@ -1,5 +1,15 @@
 import Markdown from 'react-markdown'
-import { ChatMessage } from '../types/chat.types'
+import { CalendarFile, ChatMessage } from '../types/chat.types'
+
+function downloadIcsFile(file: CalendarFile) {
+  const blob = new Blob([file.content], { type: 'text/calendar;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = file.filename
+  a.click()
+  URL.revokeObjectURL(url)
+}
 
 interface MessageBubbleProps {
   message: ChatMessage
@@ -35,6 +45,20 @@ export function MessageBubble({ message, userInitials }: MessageBubbleProps) {
             >
               {message.text}
             </Markdown>
+            {message.calendarFiles && message.calendarFiles.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {message.calendarFiles.map((file) => (
+                  <button
+                    key={file.filename}
+                    onClick={() => downloadIcsFile(file)}
+                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-base">calendar_add_on</span>
+                    {file.filename}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

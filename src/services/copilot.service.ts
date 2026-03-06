@@ -1,14 +1,29 @@
 import { DirectLine } from 'botframework-directlinejs'
-import { ChatMessage } from '../types/chat.types'
+import { CalendarFile, ChatMessage } from '../types/chat.types'
 
 type MessageCallback = (message: ChatMessage) => void
 
-function createMessage(role: 'user' | 'bot', text: string): ChatMessage {
+function extractCalendarFiles(text: string): { cleanText: string; calendarFiles: CalendarFile[] } {
+  const icsRegex = /BEGIN:VCALENDAR[\s\S]*?END:VCALENDAR/g
+  const matches = text.match(icsRegex)
+  if (!matches) return { cleanText: text, calendarFiles: [] }
+
+  const calendarFiles: CalendarFile[] = matches.map((content, i) => ({
+    filename: `assignments_week${i + 1}.ics`,
+    content,
+  }))
+
+  const cleanText = text.replace(icsRegex, '').replace(/\n{3,}/g, '\n\n').trim()
+  return { cleanText, calendarFiles }
+}
+
+function createMessage(role: 'user' | 'bot', text: string, calendarFiles?: CalendarFile[]): ChatMessage {
   return {
     id: crypto.randomUUID(),
     role,
     text,
     timestamp: new Date(),
+    ...(calendarFiles?.length ? { calendarFiles } : {}),
   }
 }
 
@@ -114,9 +129,10 @@ class DirectLineCopilotService {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       next: (activity: any) => {
         if (activity.type === 'message' && activity.from?.role === 'bot') {
-          const text = extractTextFromActivity(activity)
-          if (text) {
-            const msg = createMessage('bot', text)
+          const rawText = extractTextFromActivity(activity)
+          if (rawText) {
+            const { cleanText, calendarFiles } = extractCalendarFiles(rawText)
+            const msg = createMessage('bot', cleanText, calendarFiles)
             this.callbacks.forEach((cb) => cb(msg))
           }
         }
